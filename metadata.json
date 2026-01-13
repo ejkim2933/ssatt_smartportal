@@ -1,0 +1,7 @@
+{
+  "name": "신성오토텍 스마트 포털",
+  "description": "신성오토텍(주) 임직원을 위한 통합 업무 포털 및 AI 지원 시스템",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
