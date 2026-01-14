@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
-  // 탭 변경 시 조회 데이터 초기화 (보안 강화)
+  // 탭 변경 시 조회 데이터 초기화 (보안 및 사용자 경험 강화)
   useEffect(() => {
     setSearchName('');
     setSearchBirth('');
