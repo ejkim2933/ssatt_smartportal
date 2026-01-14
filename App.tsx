@@ -17,6 +17,15 @@ const App: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
+  // 탭 변경 시 조회 데이터 초기화 (보안 강화)
+  useEffect(() => {
+    setSearchName('');
+    setSearchBirth('');
+    setSearchResult(null);
+    setHasSearched(false);
+    setIsSearching(false);
+  }, [activeTab]);
+
   // CSV 데이터 파싱 함수
   const parseCSV = (csvText: string) => {
     const lines = csvText.split('\n');
