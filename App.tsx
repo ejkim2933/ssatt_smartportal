@@ -5,6 +5,7 @@ import Home from './components/Home';
 import AIAssistant from './components/AIAssistant';
 import SafetyScanner from './components/SafetyScanner';
 import Dashboard from './components/Dashboard';
+import AccountingFAQ from './components/AccountingFAQ';
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState('home');
@@ -76,6 +77,8 @@ const App: React.FC = () => {
         return <div className="py-12 px-8"><AIAssistant /></div>;
       case 'safety':
         return <div className="py-12 px-8"><SafetyScanner /></div>;
+      case 'faq':
+        return <AccountingFAQ />;
       case 'purchase':
         return (
           <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn space-y-12">

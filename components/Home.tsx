@@ -36,8 +36,8 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     { id: 'certificate', title: '증명서 발급 요청', icon: '📄', desc: '재직/경력 증명서 등 각종 서류 발급을 요청합니다.', color: 'bg-emerald-50', link: 'https://docs.google.com/forms/d/e/1FAIpQLScQ6AtqckpDFD9hv05tyE2q7FtkCgzfsMi-i7gbNKnH-q1snA/viewform' },
     { id: 'proposal', title: '회사 제안/신고', icon: '💡', desc: '혁신적인 아이디어나 고충 사항을 자유롭게 제안하세요.', color: 'bg-amber-50', link: 'https://docs.google.com/forms/d/e/1FAIpQLSeXAMyp5pJZXDKZlza7EWbxzhpKpD26_ZeZD59rzgKwawumcA/viewform' },
     { id: 'safety', title: '안전지킴이 대화방', icon: '💬', desc: '현장 안전 문제 제보 및 소통을 위한 오픈채팅방으로 연결합니다.', color: 'bg-rose-50', link: 'https://open.kakao.com/o/gmcH8V6h' },
-    { id: 'rules', title: '사내 규정 문의', icon: '⚖️', desc: '인사, 복지 등 회사 규정을 AI에게 즉시 물어보세요.', color: 'bg-slate-100' },
-    { id: 'condo', title: '콘도 신청 안내', icon: '🏨', desc: '임직원 복지 콘도 예약 현황 및 신청서를 확인하세요.', color: 'bg-cyan-50' },
+    { id: 'rules', title: '사내 규정 문의', icon: '⚖️', desc: '인사, 복지 등 회사 규정에 대해 온라인으로 문의하세요.', color: 'bg-slate-100', link: 'https://docs.google.com/forms/d/e/1FAIpQLSf4z9jC8MvgtsaXhSeWzUKtlXT6l-IuZsegjgvtV4BYLir2ZA/viewform?usp=dialog' },
+    { id: 'condo', title: '콘도 신청 안내', icon: '🏨', desc: '임직원 복지 콘도 예약 현황 및 신청서를 확인하세요.', color: 'bg-cyan-50', link: 'https://docs.google.com/forms/d/1aPLcfqXxDQ2d10GGoTF2-xLgaRycWlXP5yttJ6wQk3Y/viewform?edit_requested=true' },
     { id: 'faq', title: '재무회계 FAQ', icon: '💰', desc: '회계 처리 및 비용 정산에 대한 자주 묻는 질문입니다.', color: 'bg-violet-50' },
   ];
 
@@ -83,15 +83,15 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <div className="mt-20 p-10 bg-[#0f172a] rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl overflow-hidden relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px] rounded-full"></div>
         <div className="relative z-10">
-          <h2 className="text-2xl font-bold mb-2 italic">Looking for technical support?</h2>
-          <p className="text-slate-400">사내 규정 문의 및 안전 관련 소통은 AI 상담소와 안전지킴이 대화방을 활용해 보세요.</p>
+          <h2 className="text-2xl font-bold mb-2 italic">Looking for support?</h2>
+          <p className="text-slate-400">사내 규정 문의 및 안전 관련 소통은 온라인 문의창구와 안전지킴이 대화방을 활용해 보세요.</p>
         </div>
         <div className="flex gap-4 relative z-10 w-full md:w-auto">
           <button 
-            onClick={() => onNavigate('rules')}
+            onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4z9jC8MvgtsaXhSeWzUKtlXT6l-IuZsegjgvtV4BYLir2ZA/viewform?usp=dialog', '_blank')}
             className="flex-1 md:flex-none px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-2xl font-bold transition-all shadow-lg shadow-blue-600/20"
           >
-            AI 상담 시작
+            규정 문의 하기
           </button>
           <button 
             onClick={() => window.open('https://open.kakao.com/o/gmcH8V6h', '_blank')}

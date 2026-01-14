@@ -7,15 +7,16 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
+  // 메인 화면의 8개 배너와 동일한 구성 (홈 포함 9개)
   const tabs = [
     { id: 'home', label: '홈', icon: '🏠' },
     { id: 'purchase', label: '구매 신청', icon: '🛒' },
     { id: 'leave', label: '연차 관리', icon: '📅' },
     { id: 'certificate', label: '증명서 발급', icon: '📄', link: 'https://docs.google.com/forms/d/e/1FAIpQLScQ6AtqckpDFD9hv05tyE2q7FtkCgzfsMi-i7gbNKnH-q1snA/viewform' },
     { id: 'proposal', label: '제안/신고', icon: '💡', link: 'https://docs.google.com/forms/d/e/1FAIpQLSeXAMyp5pJZXDKZlza7EWbxzhpKpD26_ZeZD59rzgKwawumcA/viewform' },
-    { id: 'safety_chat', label: '안전 소통', icon: '💬', link: 'https://open.kakao.com/o/gmcH8V6h' },
-    { id: 'rules', label: '규정 문의', icon: '⚖️' },
-    { id: 'condo', label: '콘도 신청', icon: '🏨' },
+    { id: 'safety', label: '안전 소통', icon: '💬', link: 'https://open.kakao.com/o/gmcH8V6h' },
+    { id: 'rules', label: '규정 문의', icon: '⚖️', link: 'https://docs.google.com/forms/d/e/1FAIpQLSf4z9jC8MvgtsaXhSeWzUKtlXT6l-IuZsegjgvtV4BYLir2ZA/viewform?usp=dialog' },
+    { id: 'condo', label: '콘도 신청', icon: '🏨', link: 'https://docs.google.com/forms/d/1aPLcfqXxDQ2d10GGoTF2-xLgaRycWlXP5yttJ6wQk3Y/viewform?edit_requested=true' },
     { id: 'faq', label: '회계 FAQ', icon: '💰' },
   ];
 
@@ -28,39 +29,39 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 px-4 md:px-6 py-3 shadow-sm">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 px-4 py-2.5 shadow-sm">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
-        {/* 브랜드 영역: 한글 중심의 깔끔한 텍스트 디자인 */}
+        {/* 브랜드 영역: 텍스트 중심의 깔끔하고 귀여운 레이아웃 */}
         <div 
           className="flex flex-col cursor-pointer group min-w-fit"
           onClick={() => setActiveTab('home')}
         >
-          <h1 className="text-lg font-black text-slate-900 tracking-tighter leading-none group-hover:text-blue-700 transition-colors">
-            신성오토텍[주]
-          </h1>
-          <div className="flex items-center gap-1.5 mt-1">
-            <span className="text-[10px] font-bold text-blue-600">스마트 포털</span>
-            <span className="text-[8px] text-slate-400 font-bold tracking-widest border-l border-slate-200 pl-1.5 uppercase">
-              SHINSUNG AUTOTECH
-            </span>
+          <div className="flex items-baseline gap-1.5">
+            <h1 className="text-base font-black text-slate-900 tracking-tight group-hover:text-blue-600 transition-colors">
+              신성오토텍[주]
+            </h1>
+            <span className="text-[11px] font-bold text-blue-500">스마트 포털</span>
           </div>
+          <p className="text-[9px] text-slate-400 font-bold tracking-[0.2em] uppercase mt-0.5 leading-none">
+            SHINSUNG AUTOTECH
+          </p>
         </div>
         
-        {/* 네비게이션 영역: 작고 귀여운 칩(Chip) 스타일 */}
-        <nav className="flex items-center gap-1 bg-slate-50 p-1 rounded-xl border border-slate-200 overflow-x-auto no-scrollbar">
+        {/* 네비게이션 영역: 아주 작고 귀여운 칩(Chip) 스타일 버튼들 */}
+        <nav className="flex items-center gap-0.5 overflow-x-auto no-scrollbar py-1">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => handleTabClick(tab)}
-              className={`px-3 py-1.5 rounded-lg text-[11px] font-bold transition-all flex items-center gap-1.5 whitespace-nowrap ${
+              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[10.5px] font-bold transition-all whitespace-nowrap ${
                 activeTab === tab.id 
-                  ? 'bg-white text-blue-600 shadow-sm border border-slate-200' 
-                  : 'text-slate-500 hover:text-slate-800 hover:bg-white/50'
+                  ? 'bg-blue-50 text-blue-600 ring-1 ring-blue-100 shadow-sm' 
+                  : 'text-slate-500 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
               <span className="text-xs">{tab.icon}</span>
               {tab.label}
-              {tab.link && <span className="text-[8px] opacity-30">↗</span>}
+              {tab.link && <span className="text-[8px] opacity-20 ml-0.5">↗</span>}
             </button>
           ))}
         </nav>
