@@ -1,9 +1,10 @@
 /**
- * Frontend Service: geminiService.ts
- * 중요: 여기서는 절대 @google/generative-ai를 import 하지 않습니다.
- * 오직 서버(/api/...)로 요청만 보냅니다.
+ * geminiService.ts
+ * 프론트엔드에서는 AI 라이브러리를 직접 쓰지 않고, 서버로 요청(fetch)만 보냅니다.
+ * 이렇게 하면 부품이 없다는 에러가 절대 날 수 없습니다.
  */
 
+// 1. 채팅 (서버로 토스)
 export const askCompanyRules = async (prompt: string) => {
   try {
     const response = await fetch('/api/chat', {
@@ -11,15 +12,15 @@ export const askCompanyRules = async (prompt: string) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ prompt }),
     });
-    if (!response.ok) throw new Error('Network response was not ok');
     const data = await response.json();
-    return data.text;
+    return data.text || "응답이 없습니다.";
   } catch (error) {
     console.error(error);
-    return "서버 연결 오류입니다.";
+    return "서버 연결에 실패했습니다.";
   }
 };
 
+// 2. 이미지 분석 (서버로 토스)
 export const analyzeSafetyImage = async (base64Image: string) => {
   try {
     const response = await fetch('/api/analyze-image', {
@@ -28,12 +29,13 @@ export const analyzeSafetyImage = async (base64Image: string) => {
       body: JSON.stringify({ image: base64Image }),
     });
     const data = await response.json();
-    return data.text;
+    return data.text || "분석에 실패했습니다.";
   } catch (error) {
-    return "이미지 분석 오류입니다.";
+    return "이미지 전송 실패";
   }
 };
 
+// 3. 설비 이슈 분석 (서버로 토스)
 export const analyzeVehicleIssue = async (description: string) => {
   try {
     const response = await fetch('/api/analyze-issue', {
@@ -43,20 +45,16 @@ export const analyzeVehicleIssue = async (description: string) => {
     });
     return await response.json();
   } catch (error) {
-    return {
-      issue: "통신 오류",
-      explanation: "서버 연결 실패",
-      recommendation: "다시 시도해주세요",
-      severity: "low",
-      estimatedCost: "0"
-    };
+    return { issue: "통신 오류", explanation: "서버 연결 실패", severity: "low" };
   }
 };
 
+// 4. 재사용 함수
 export const analyzeVehicleImage = async (base64Image: string) => {
   return analyzeSafetyImage(base64Image);
 };
 
+// 5. TTS (더미 함수)
 export const speakDiagnosis = async (text: string) => {
-  console.log("TTS 요청 (서버 미구현):", text);
+  console.log("TTS:", text);
 };
