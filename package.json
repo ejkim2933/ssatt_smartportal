@@ -1,7 +1,7 @@
 {
   "name": "ssatt-smartportal",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -15,8 +15,6 @@
     "@google/generative-ai": "^0.12.0",
     "recharts": "^2.12.7",
     "vite": "^5.2.11",
-    "@types/node": "^20.12.7",
-    "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.4.5"
+    "@vitejs/plugin-react": "^4.2.1"
   }
 }
