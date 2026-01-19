@@ -1,17 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>신성오토텍 스마트 포털</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        html {
-            /* 스크롤바 유무와 상관없이 레이아웃 공간을 고정하여 흔들림 방지 */
-            scrollbar-gutter: stable;
-        }
+        html { scrollbar-gutter: stable; }
         body {
             font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
             background-color: #f8fafc;
@@ -19,26 +16,10 @@
             margin: 0;
             -webkit-font-smoothing: antialiased;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
     </style>
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom": "https://esm.sh/react-dom@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
-    "recharts": "https://esm.sh/recharts@^3.6.0",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
-</body>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
