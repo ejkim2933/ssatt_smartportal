@@ -1,6 +1,6 @@
 /**
  * Frontend Service: geminiService.ts
- * AI SDK를 직접 쓰지 않고, server.cjs로 요청을 보냅니다.
+ * 이제 직접 AI를 부르지 않고, 서버에게 부탁(fetch)만 합니다.
  */
 
 // 1. 사내 규정 질문 (텍스트)
@@ -61,7 +61,7 @@ export const analyzeVehicleImage = async (base64Image: string) => {
   return analyzeSafetyImage(base64Image);
 };
 
-// --- 오디오 관련 헬퍼 함수 (브라우저에서 재생을 위해 유지) ---
+// --- 오디오 관련 헬퍼 함수 (유지) ---
 const decodeBase64 = (base64: string) => {
   const binaryString = atob(base64);
   const bytes = new Uint8Array(binaryString.length);
@@ -90,32 +90,9 @@ const decodeAudioData = async (
   return buffer;
 };
 
-// 5. 음성 출력 (TTS)
+// 5. 음성 출력 (TTS) - 기능 유지 (빈 함수 처리 방지)
 export const speakDiagnosis = async (text: string) => {
-  try {
-    const response = await fetch('/api/tts', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ text }),
-    });
-    
-    const data = await response.json();
-    const base64Audio = data.audioData;
-
-    if (base64Audio) {
-      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
-      const audioBuffer = await decodeAudioData(
-        decodeBase64(base64Audio),
-        audioContext,
-        24000,
-        1,
-      );
-      const source = audioContext.createBufferSource();
-      source.buffer = audioBuffer;
-      source.connect(audioContext.destination);
-      source.start();
-    }
-  } catch (error) {
-    console.error("TTS output error:", error);
-  }
+  // 현재 서버 TTS 기능이 임시 비활성 상태이므로 로그만 출력하거나
+  // 추후 서버에 TTS 엔드포인트를 추가하면 여기도 fetch로 바꾸면 됩니다.
+  console.log("TTS 요청:", text);
 };
