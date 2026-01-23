@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
     { id: 'proposal_rules', label: '제안/규정', icon: '⚖️' },
     { id: 'safety', label: '안전 소통', icon: '💬', link: 'https://open.kakao.com/o/gmcH8V6h' },
     { id: 'official_sites', label: '공식 사이트', icon: '🌐' },
-    { id: 'condo', label: '콘도 신청', icon: '🏨', link: 'https://docs.google.com/forms/d/1aPLcfqXxDQ2d10GGoTF2-xLgaRycWlXP5yttJ6wQk3Y/viewform?edit_requested=true' },
+    { id: 'condo', label: '콘도 신청', icon: '🏨' },
     { id: 'faq', label: '회계 FAQ', icon: '💰' },
   ];
 

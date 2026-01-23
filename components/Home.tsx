@@ -42,7 +42,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
     { id: 'certificate', title: '증명서 발급 요청', icon: '📄', desc: '재직/경력 증명서 등 각종 서류 발급을 요청합니다.', color: 'bg-emerald-50', link: 'https://docs.google.com/forms/d/e/1FAIpQLScQ6AtqckpDFD9hv05tyE2q7FtkCgzfsMi-i7gbNKnH-q1snA/viewform' },
     { id: 'proposal_rules', title: '문의&제안', icon: '⚖️', desc: '회사에 대한 제안, 신고 및 규정 관련 문의를 통합 관리합니다.', color: 'bg-amber-50' },
     { id: 'safety', title: '안전지킴이 대화방', icon: '💬', desc: '현장 안전 문제 제보 및 소통을 위한 오픈채팅방 연결.', color: 'bg-rose-50', link: 'https://open.kakao.com/o/gmcH8V6h' },
-    { id: 'condo', title: '콘도 신청 안내', icon: '🏨', desc: '임직원 복지 콘도 예약 현황 및 신청서를 확인하세요.', color: 'bg-cyan-50', link: 'https://docs.google.com/forms/d/1aPLcfqXxDQ2d10GGoTF2-xLgaRycWlXP5yttJ6wQk3Y/viewform?edit_requested=true' },
+    { id: 'condo', title: '콘도 신청 안내', icon: '🏨', desc: '임직원 복지 콘도 예약 현황 및 신청서를 확인하세요.', color: 'bg-cyan-50' },
     { id: 'official_sites', title: '공식 홈페이지', icon: '🌐', desc: '신성오토텍 및 신성EP의 공식 홈페이지로 연결합니다.', color: 'bg-slate-100' },
     { id: 'faq', title: '재무회계 FAQ', icon: '💰', desc: '회계 처리 및 비용 정산에 대한 자주 묻는 질문입니다.', color: 'bg-violet-50' },
   ];

@@ -122,6 +122,143 @@ const App: React.FC = () => {
             </div>
           </div>
         );
+      case 'condo':
+        return (
+          <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn space-y-10">
+            <div className="text-center mb-8">
+              <div className="inline-block px-4 py-1.5 bg-cyan-600 text-white rounded-2xl text-[10px] font-black tracking-widest uppercase mb-4 shadow-lg shadow-cyan-200">
+                Welfare Service
+              </div>
+              <h2 className="text-4xl font-black text-slate-900 mb-2">콘도 신청 안내</h2>
+              <p className="text-slate-500 font-medium text-lg">임직원 여러분의 편안한 휴식을 위한 콘도 이용 가이드입니다.</p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-8">
+              {/* 섹션 1 & 2 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <section className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                  <h3 className="text-xl font-black text-cyan-700 mb-6 flex items-center gap-2">
+                    <span className="w-2 h-7 bg-cyan-500 rounded-full"></span>
+                    1. 이용 자격 및 한도
+                  </h3>
+                  <ul className="space-y-4 text-slate-700 font-medium leading-relaxed">
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-500 mt-1">•</span>
+                      임직원 본인을 포함한 직계가족만 사용 가능합니다.
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-500 mt-1">•</span>
+                      직원 1인당 연간 2박이 원칙입니다.
+                    </li>
+                    <li className="pl-4 text-sm text-slate-400 bg-slate-50 p-4 rounded-2xl">
+                      <span className="font-bold">참고:</span> 회사 단체 행사로 이용한 일수는 차감되지 않으며, 잔여 일수가 있을 경우 관리부서장의 승인 하에 추가 사용이 가능할 수 있습니다.
+                    </li>
+                  </ul>
+                </section>
+
+                <section className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                  <h3 className="text-xl font-black text-cyan-700 mb-6 flex items-center gap-2">
+                    <span className="w-2 h-7 bg-cyan-500 rounded-full"></span>
+                    2. 이용 가능한 곳
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-4">회사에서 보유한 아래 리조트의 전국 지점을 이용할 수 있습니다.</p>
+                  <div className="space-y-4">
+                    <div className="p-4 bg-cyan-50 rounded-2xl border border-cyan-100">
+                      <h4 className="font-bold text-cyan-900 mb-1">소노호텔&리조트</h4>
+                      <p className="text-xs text-cyan-700 leading-relaxed">홍천, 양양, 삼척, 진도, 고양, 여수, 거제, 제주, 천안, 청송, 경주, 변산, 양평, 단양</p>
+                    </div>
+                    <div className="p-4 bg-orange-50 rounded-2xl border border-orange-100">
+                      <h4 className="font-bold text-orange-900 mb-1">한화리조트</h4>
+                      <p className="text-xs text-orange-700 leading-relaxed">설악, 백암온천, 용인, 양평, 수안보온천, 산정호수, 해운대, 대천, 경주, 제주, 평창, 거제, 여수</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              {/* 섹션 3 */}
+              <section className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                <h3 className="text-xl font-black text-cyan-700 mb-6 flex items-center gap-2">
+                  <span className="w-2 h-7 bg-cyan-500 rounded-full"></span>
+                  3. 신청 및 이용 절차
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    { step: '1. 신청', desc: "이용 희망일 1개월 전에 경영지원팀에 '콘도이용신청서'를 제출합니다." },
+                    { step: '2. 예약', desc: "경영지원팀에서 예약 가능 여부를 확인하고 예약을 진행합니다." },
+                    { step: '3. 수령', desc: "이용일 10일 전에 예약 확정 여부를 재확인합니다. 예약이 불가한 경우에도 안내해 드립니다." },
+                    { step: '4. 반납', desc: "콘도 이용 후에는 즉시 현장에서 카드를 반납해야 합니다." },
+                  ].map((item, idx) => (
+                    <div key={idx} className="p-6 bg-slate-50 rounded-3xl border border-slate-100 relative">
+                      <span className="absolute -top-3 -left-2 w-8 h-8 bg-white border border-slate-100 rounded-full flex items-center justify-center text-xs font-black text-cyan-600 shadow-sm">{idx+1}</span>
+                      <h4 className="font-black text-slate-900 mb-2">{item.step}</h4>
+                      <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* 섹션 4 & 5 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <section className="bg-white p-8 rounded-[2.5rem] border border-slate-100 shadow-sm">
+                  <h3 className="text-xl font-black text-cyan-700 mb-6 flex items-center gap-2">
+                    <span className="w-2 h-7 bg-cyan-500 rounded-full"></span>
+                    4. 배정 우선순위
+                  </h3>
+                  <p className="text-slate-500 text-sm mb-4 italic">이용 희망자가 몰릴 경우 다음 순서대로 우선권이 주어집니다.</p>
+                  <ul className="space-y-2">
+                    {['신청 순서', '장기근속자 (포상휴가 및 모범/공로 사원 포함)', '기혼자', '직원 단체 행사(야유회 등)', '기타(추첨)'].map((p, i) => (
+                      <li key={i} className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl text-slate-700 text-sm font-bold">
+                        <span className="w-5 h-5 bg-cyan-100 text-cyan-600 rounded-full flex items-center justify-center text-[10px]">{i+1}</span>
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+
+                <section className="bg-rose-50 p-8 rounded-[2.5rem] border border-rose-100 shadow-sm">
+                  <h3 className="text-xl font-black text-rose-700 mb-6 flex items-center gap-2">
+                    <span className="w-2 h-7 bg-rose-500 rounded-full"></span>
+                    5. 취소 및 페널티
+                  </h3>
+                  <p className="text-rose-600 text-sm mb-4 font-bold">예약 후 가지 않거나 늦게 취소하면 강력한 불이익이 있으니 주의하셔야 합니다.</p>
+                  <div className="space-y-3">
+                    <div className="bg-white/80 p-4 rounded-2xl">
+                      <h4 className="font-black text-rose-900 text-sm mb-1">취소</h4>
+                      <p className="text-xs text-rose-700 leading-relaxed">반드시 사용일 7일 전까지 경영지원팀에 공유해줘야 합니다.</p>
+                    </div>
+                    <div className="bg-white/80 p-4 rounded-2xl">
+                      <h4 className="font-black text-rose-900 text-sm mb-1">양도</h4>
+                      <p className="text-xs text-rose-700 leading-relaxed">사용권을 타인에게 대여했을 경우 올해 남은 기간과 내년(익년도)까지 콘도 이용이 금지됩니다.</p>
+                    </div>
+                    <div className="bg-white/80 p-4 rounded-2xl">
+                      <h4 className="font-black text-rose-900 text-sm mb-1">위반 시</h4>
+                      <p className="text-xs text-rose-700 leading-relaxed">예약 후 이용하지 않거나(No-Show), 7일 전까지 취소하지 않으면 올해 남은 기간과 내년(익년도)까지 콘도 이용이 금지됩니다.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            {/* 콘도 신청 배너 */}
+            <div className="p-10 bg-gradient-to-br from-cyan-600 to-blue-700 rounded-[3rem] text-white flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 blur-[80px] rounded-full -translate-y-1/2 translate-x-1/3 transition-transform duration-700 group-hover:scale-150"></div>
+              <div className="relative z-10 text-center md:text-left">
+                <h2 className="text-3xl font-black mb-2">지금 콘도 예약을 신청하세요</h2>
+                <p className="text-cyan-100 font-medium opacity-80">작성하신 내용은 경영지원팀에서 확인 후 별도 안내 드립니다.</p>
+              </div>
+              <button 
+                onClick={() => window.open('https://docs.google.com/forms/d/1aPLcfqXxDQ2d10GGoTF2-xLgaRycWlXP5yttJ6wQk3Y/viewform?edit_requested=true', '_blank')}
+                className="relative z-10 px-12 py-5 bg-white text-cyan-600 rounded-[1.5rem] font-black text-lg transition-all shadow-xl hover:scale-105 active:scale-95 flex items-center gap-3"
+              >
+                <span>🏨</span> 콘도 이용 신청서 작성
+              </button>
+            </div>
+
+            <div className="text-center pb-12">
+              <button onClick={() => setActiveTab('home')} className="text-slate-400 font-bold hover:text-cyan-600 transition-colors">← 홈으로 돌아가기</button>
+            </div>
+          </div>
+        );
       case 'proposal_rules':
         return (
           <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn">
@@ -309,7 +446,7 @@ const App: React.FC = () => {
                 <div className="space-y-2">
                   <h4 className="text-slate-400 text-xs font-bold uppercase tracking-widest">중요 안내 사항</h4>
                   <p className="text-slate-800 text-sm font-medium leading-relaxed">
-                    2026년부터 잔여 연차는 <span className="font-bold text-red-600">수당으로 지급되지 않습니다.</span> 올해 안에 모두 소진을 권장합니다.
+                    2026년 발생 연차에서 사용 연차를 차감한 잔여 연차를 확인하실 수 있습니다. 추가 문의사항은 경영지원팀으로 문의 부탁드립니다. 또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
                   </p>
                 </div>
               </div>
