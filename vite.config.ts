@@ -1,16 +1,20 @@
-
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
   define: {
-    // Netlify 등 배포 환경의 API 키를 클라이언트 코드에 주입
+    // 소스 코드 내의 process.env.API_KEY를 실제 값으로 치환
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY || '')
+  },
+  server: {
+    port: 3000,
+    open: true
   },
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    sourcemap: false,
     commonjsOptions: {
       transformMixedEsModules: true
     }
