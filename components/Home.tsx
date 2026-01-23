@@ -14,14 +14,14 @@ const Card: React.FC<CardProps> = ({ title, icon, desc, color, onClick }) => (
     onClick={onClick}
     className="group relative bg-white rounded-3xl text-left transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-900/5 border border-slate-100 flex flex-col p-5 overflow-hidden h-full"
   >
-    <div className={`w-11 h-11 rounded-xl ${color} flex items-center justify-center text-2xl mb-2.5 shadow-sm group-hover:scale-110 transition-transform`}>
+    <div className={`w-11 h-11 rounded-xl ${color} flex items-center justify-center text-2xl mb-3 shadow-sm group-hover:scale-110 transition-transform`}>
       {icon}
     </div>
     <div className="flex-1 flex flex-col justify-start">
-      <h3 className="text-[26px] font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tighter leading-[1.15] mb-2">
+      <h3 className="text-[17px] font-black text-slate-900 group-hover:text-blue-600 transition-colors tracking-tight leading-tight mb-1.5">
         {title}
       </h3>
-      <p className="text-[11.5px] text-slate-500 leading-snug font-medium opacity-80 group-hover:opacity-100 transition-opacity line-clamp-2">
+      <p className="text-[11.5px] text-slate-500 leading-snug font-medium opacity-80 group-hover:opacity-100 transition-opacity">
         {desc}
       </p>
     </div>
@@ -57,7 +57,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="h-full flex flex-col py-6 px-10 max-w-[1600px] mx-auto animate-fadeIn gap-5">
-      {/* 히어로 섹션 */}
+      {/* 히어로 섹션 - 컴팩트하게 조정 */}
       <header className="flex-none">
         <div className="inline-block px-3 py-1 bg-blue-600 text-white rounded-xl text-[9px] font-black tracking-widest uppercase mb-2 shadow-md shadow-blue-100">
           Smart Employee Portal
@@ -70,7 +70,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </p>
       </header>
 
-      {/* 카드 그리드 */}
+      {/* 카드 그리드 - flex-1을 주어 남은 공간을 채우고 overflow 방지 */}
       <div className="flex-1 min-h-0 grid grid-cols-2 lg:grid-cols-4 gap-4">
         {cards.map((card) => (
           <Card 
@@ -84,13 +84,13 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         ))}
       </div>
 
-      {/* 하단 퀵 지원 배너 */}
-      <div className="flex-none p-6 bg-[#0f172a] rounded-[2rem] text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl relative overflow-hidden border border-slate-800">
+      {/* 하단 퀵 지원 배너 - 세로 높이 축소 */}
+      <div className="flex-none p-6 bg-[#0f172a] rounded-[2rem] text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/10 blur-[60px] rounded-full -translate-y-1/2 translate-x-1/3"></div>
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-4">
           <div className="w-10 h-10 bg-blue-600/20 rounded-full flex items-center justify-center text-blue-400 text-lg">📢</div>
           <div className="text-center md:text-left">
-            <h2 className="text-[27px] font-black italic text-blue-400 leading-none mb-1 tracking-tighter">Quick Support</h2>
+            <h2 className="text-lg font-black italic text-blue-400 leading-none mb-1">Quick Support</h2>
             <p className="text-slate-400 text-xs font-medium">긴급한 규정 문의나 안전 제보가 필요하신가요?</p>
           </div>
         </div>
