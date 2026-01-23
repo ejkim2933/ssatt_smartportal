@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -381,67 +380,71 @@ const App: React.FC = () => {
         );
       case 'leave':
         return (
-          <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn space-y-8 flex flex-col items-center">
+          <div className="max-w-5xl mx-auto py-12 px-4 sm:px-8 animate-fadeIn space-y-8 flex flex-col items-center">
             <div className="w-full max-w-4xl space-y-4">
-              <div className="relative flex items-center bg-white rounded-full shadow-2xl p-2 border border-slate-100">
-                <div className="flex-1 flex items-center px-6 gap-3">
-                  <span className="text-slate-400">👤</span>
-                  <input 
-                    type="text" 
-                    placeholder="성함을 입력하세요"
-                    value={searchName}
-                    onChange={(e) => setSearchName(e.target.value)}
-                    className="w-full py-3 text-lg outline-none placeholder-slate-300 font-medium"
-                  />
-                  <div className="w-px h-8 bg-slate-100 mx-2"></div>
-                  <span className="text-slate-400">🔑</span>
-                  <input 
-                    type="password" 
-                    placeholder="생년월일 6자리"
-                    value={searchBirth}
-                    onChange={(e) => setSearchBirth(e.target.value)}
-                    maxLength={6}
-                    className="w-full py-3 text-lg outline-none placeholder-slate-300 font-medium"
-                  />
+              <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center bg-white rounded-[2rem] sm:rounded-full shadow-2xl p-2 sm:p-2 border border-slate-100">
+                <div className="flex-1 flex flex-col sm:flex-row items-center px-4 sm:px-6 gap-2 sm:gap-3">
+                  <div className="flex items-center gap-3 w-full sm:w-auto flex-1">
+                    <span className="text-slate-400 text-xl">👤</span>
+                    <input 
+                      type="text" 
+                      placeholder="성함을 입력하세요"
+                      value={searchName}
+                      onChange={(e) => setSearchName(e.target.value)}
+                      className="w-full py-3.5 sm:py-3 text-base sm:text-lg outline-none placeholder-slate-300 font-medium"
+                    />
+                  </div>
+                  <div className="hidden sm:block w-px h-8 bg-slate-100 mx-2"></div>
+                  <div className="flex items-center gap-3 w-full sm:w-auto flex-1">
+                    <span className="text-slate-400 text-xl">🔑</span>
+                    <input 
+                      type="password" 
+                      placeholder="생년월일 6자리"
+                      value={searchBirth}
+                      onChange={(e) => setSearchBirth(e.target.value)}
+                      maxLength={6}
+                      className="w-full py-3.5 sm:py-3 text-base sm:text-lg outline-none placeholder-slate-300 font-medium"
+                    />
+                  </div>
                 </div>
                 <button 
                   onClick={handleLeaveSearch}
                   disabled={isSearching}
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 transition-all shadow-lg shadow-indigo-200"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 sm:px-10 py-4 rounded-3xl sm:rounded-full font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-indigo-200 mt-2 sm:mt-0"
                 >
                   {isSearching ? '조회중...' : <>🔍 조회하기</>}
                 </button>
               </div>
             </div>
 
-            <div className="w-full max-w-4xl aspect-[21/9] bg-[#1a1f2e] rounded-[3rem] shadow-2xl flex flex-col items-center justify-center relative overflow-hidden">
+            <div className="w-full max-w-4xl aspect-[21/9] min-h-[220px] bg-[#1a1f2e] rounded-[2.5rem] sm:rounded-[3rem] shadow-2xl flex flex-col items-center justify-center relative overflow-hidden p-6 text-center">
                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent"></div>
                {hasSearched && searchResult ? (
                  <div className="text-center animate-slideUp">
-                    <p className="text-indigo-400 font-bold tracking-[0.3em] uppercase mb-4 text-sm">Employee Leave Status</p>
-                    <h2 className="text-white text-3xl font-bold mb-2">{searchResult.name} 님의 잔여 연차</h2>
-                    <div className="text-white text-8xl font-black tracking-tighter">
-                      {searchResult.count}<span className="text-3xl font-bold text-slate-500 ml-2">DAYS</span>
+                    <p className="text-indigo-400 font-bold tracking-[0.3em] uppercase mb-2 sm:mb-4 text-xs sm:text-sm">Employee Leave Status</p>
+                    <h2 className="text-white text-xl sm:text-3xl font-bold mb-2">{searchResult.name} 님의 잔여 연차</h2>
+                    <div className="text-white text-6xl sm:text-8xl font-black tracking-tighter">
+                      {searchResult.count}<span className="text-xl sm:text-3xl font-bold text-slate-500 ml-2">DAYS</span>
                     </div>
                  </div>
                ) : (
-                 <div className="text-center space-y-6 opacity-40">
-                   <div className="w-20 h-20 border-2 border-slate-600 rounded-2xl flex items-center justify-center mx-auto">
-                     <span className="text-4xl">📅</span>
+                 <div className="text-center space-y-4 sm:space-y-6 opacity-40">
+                   <div className="w-16 h-16 sm:w-20 sm:h-20 border-2 border-slate-600 rounded-2xl flex items-center justify-center mx-auto">
+                     <span className="text-3xl sm:text-4xl">📅</span>
                    </div>
-                   <h3 className="text-slate-400 text-3xl font-black tracking-[0.2em] uppercase">Waiting for Input</h3>
+                   <h3 className="text-slate-400 text-xl sm:text-3xl font-black tracking-[0.2em] uppercase">Waiting for Input</h3>
                  </div>
                )}
             </div>
 
             <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
-              <div className="md:col-span-2 bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex items-start gap-6">
-                <div className="w-12 h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-xl flex-shrink-0">
+              <div className="md:col-span-2 bg-white p-6 sm:p-8 rounded-3xl border border-slate-100 shadow-sm flex items-start gap-4 sm:gap-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-lg sm:text-xl flex-shrink-0">
                   ⚠️
                 </div>
                 <div className="space-y-2">
-                  <h4 className="text-slate-400 text-xs font-bold uppercase tracking-widest">중요 안내 사항</h4>
-                  <p className="text-slate-800 text-sm font-medium leading-relaxed">
+                  <h4 className="text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">중요 안내 사항</h4>
+                  <p className="text-slate-800 text-xs sm:text-sm font-medium leading-relaxed">
                     2026년 발생 연차에서 사용 연차를 차감한 잔여 연차를 확인하실 수 있습니다. 추가 문의사항은 경영지원팀으로 문의 부탁드립니다. 또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
                   </p>
                 </div>
@@ -451,11 +454,15 @@ const App: React.FC = () => {
                 href="https://docs.google.com/forms/d/109Zjdh7VKG4AnJjLztlbQnTS6O9xqdLyy6nooH6CmLU/viewform?edit_requested=true"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-indigo-50 p-8 rounded-3xl border border-indigo-100 flex flex-col items-center justify-center hover:shadow-lg transition-all group"
+                className="bg-indigo-50 p-6 sm:p-8 rounded-3xl border border-indigo-100 flex flex-col items-center justify-center hover:shadow-lg transition-all group"
               >
                 <span className="text-indigo-400 text-[10px] font-bold tracking-widest uppercase mb-2">Action</span>
-                <span className="text-indigo-800 font-bold text-lg group-hover:underline">연차 신청서 ↑</span>
+                <span className="text-indigo-800 font-bold text-base sm:text-lg group-hover:underline">연차 신청서 ↑</span>
               </a>
+            </div>
+            
+            <div className="text-center pb-12 mt-4">
+              <button onClick={() => setActiveTab('home')} className="text-slate-400 font-bold hover:text-indigo-600 transition-colors">← 홈으로 돌아가기</button>
             </div>
           </div>
         );
