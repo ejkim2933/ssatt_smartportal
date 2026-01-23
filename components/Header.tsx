@@ -7,15 +7,14 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
-  // 메인 화면의 8개 배너와 동일한 구성 (홈 포함 9개)
   const tabs = [
     { id: 'home', label: '홈', icon: '🏠' },
     { id: 'purchase', label: '구매 신청', icon: '🛒' },
     { id: 'leave', label: '연차 관리', icon: '📅' },
     { id: 'certificate', label: '증명서 발급', icon: '📄', link: 'https://docs.google.com/forms/d/e/1FAIpQLScQ6AtqckpDFD9hv05tyE2q7FtkCgzfsMi-i7gbNKnH-q1snA/viewform' },
-    { id: 'proposal', label: '제안/신고', icon: '💡', link: 'https://docs.google.com/forms/d/e/1FAIpQLSeXAMyp5pJZXDKZlza7EWbxzhpKpD26_ZeZD59rzgKwawumcA/viewform' },
+    { id: 'proposal_rules', label: '제안/규정', icon: '⚖️' },
     { id: 'safety', label: '안전 소통', icon: '💬', link: 'https://open.kakao.com/o/gmcH8V6h' },
-    { id: 'rules', label: '규정 문의', icon: '⚖️', link: 'https://docs.google.com/forms/d/e/1FAIpQLSf4z9jC8MvgtsaXhSeWzUKtlXT6l-IuZsegjgvtV4BYLir2ZA/viewform?usp=dialog' },
+    { id: 'official_sites', label: '공식 사이트', icon: '🌐' },
     { id: 'condo', label: '콘도 신청', icon: '🏨', link: 'https://docs.google.com/forms/d/1aPLcfqXxDQ2d10GGoTF2-xLgaRycWlXP5yttJ6wQk3Y/viewform?edit_requested=true' },
     { id: 'faq', label: '회계 FAQ', icon: '💰' },
   ];
@@ -31,7 +30,6 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-slate-100 px-4 py-2.5 shadow-sm">
       <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
-        {/* 브랜드 영역: 텍스트 중심의 깔끔하고 귀여운 레이아웃 */}
         <div 
           className="flex flex-col cursor-pointer group min-w-fit"
           onClick={() => setActiveTab('home')}
@@ -47,7 +45,6 @@ const Header: React.FC<HeaderProps> = ({ activeTab, setActiveTab }) => {
           </p>
         </div>
         
-        {/* 네비게이션 영역: 아주 작고 귀여운 칩(Chip) 스타일 버튼들 */}
         <nav className="flex items-center gap-0.5 overflow-x-auto no-scrollbar py-1">
           {tabs.map((tab) => (
             <button

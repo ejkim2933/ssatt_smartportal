@@ -88,22 +88,142 @@ const App: React.FC = () => {
         return <div className="py-12 px-8"><SafetyScanner /></div>;
       case 'faq':
         return <AccountingFAQ />;
+      case 'official_sites':
+        return (
+          <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-black text-slate-900 mb-2">공식 홈페이지 연결</h2>
+              <p className="text-slate-500 font-medium">신성오토텍 및 관계사의 공식 홈페이지로 이동할 수 있습니다.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <button 
+                onClick={() => window.open('https://ssautotech.co.kr/', '_blank')}
+                className="group bg-white p-10 rounded-[2.5rem] border border-slate-200 text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+              >
+                <div className="w-20 h-20 bg-blue-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-4xl">🏢</span>
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-4">신성오토텍</h3>
+                <p className="text-sm text-slate-500 font-medium">공식 홈페이지 바로가기</p>
+              </button>
+              <button 
+                onClick={() => window.open('https://shinsungep.co.kr/', '_blank')}
+                className="group bg-white p-10 rounded-[2.5rem] border border-slate-200 text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+              >
+                <div className="w-20 h-20 bg-indigo-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-4xl">⚡</span>
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-4">신성EP</h3>
+                <p className="text-sm text-slate-500 font-medium">공식 홈페이지 바로가기</p>
+              </button>
+            </div>
+            <div className="mt-12 text-center">
+              <button onClick={() => setActiveTab('home')} className="text-slate-400 font-bold hover:text-blue-600 transition-colors">← 홈으로 돌아가기</button>
+            </div>
+          </div>
+        );
+      case 'proposal_rules':
+        return (
+          <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-black text-slate-900 mb-2">제안/신고 및 규정 문의</h2>
+              <p className="text-slate-500 font-medium">원하시는 서비스를 선택해 주세요.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <button 
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSeXAMyp5pJZXDKZlza7EWbxzhpKpD26_ZeZD59rzgKwawumcA/viewform', '_blank')}
+                className="group bg-white p-10 rounded-[2.5rem] border border-slate-200 text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+              >
+                <div className="w-20 h-20 bg-amber-50 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-4xl">💡</span>
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-4">회사 제안/신고</h3>
+                <p className="text-sm text-slate-500 font-medium">혁신적인 아이디어 및 고충 사항 제안</p>
+              </button>
+              <button 
+                onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf4z9jC8MvgtsaXhSeWzUKtlXT6l-IuZsegjgvtV4BYLir2ZA/viewform?usp=dialog', '_blank')}
+                className="group bg-white p-10 rounded-[2.5rem] border border-slate-200 text-center hover:shadow-2xl transition-all hover:-translate-y-2"
+              >
+                <div className="w-20 h-20 bg-slate-100 rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+                  <span className="text-4xl">⚖️</span>
+                </div>
+                <h3 className="text-2xl font-black text-slate-900 mb-4">사내 규정 문의</h3>
+                <p className="text-sm text-slate-500 font-medium">인사, 복지 등 회사 규정 온라인 문의</p>
+              </button>
+            </div>
+            <div className="mt-12 text-center">
+              <button onClick={() => setActiveTab('home')} className="text-slate-400 font-bold hover:text-blue-600 transition-colors">← 홈으로 돌아가기</button>
+            </div>
+          </div>
+        );
       case 'purchase':
         return (
           <div className="max-w-5xl mx-auto py-12 px-8 animate-fadeIn space-y-12">
-            <section className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+            <section className="bg-white rounded-[2rem] border border-slate-200 overflow-hidden shadow-sm">
               <div className="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
-                <h2 className="text-xl font-bold text-[#00529b]">물품 구매 신청 가이드</h2>
+                <h2 className="text-xl font-bold text-[#00529b]">물품 구매 신청 통합 안내</h2>
               </div>
-              <div className="p-8 space-y-4">
-                <ol className="list-decimal list-inside space-y-4 text-slate-700 leading-relaxed">
-                  <li>매월 첫째주, 팀에서 필요하신 물품을 아래 링크에 작성해주세요. <span className="text-slate-500">(문구류, 커피류, 비닐봉지, 소모품류 등 모든 아이템)</span></li>
-                  <li>이외에 추가로 필요하신 물품은 수시로 아래 링크에 접속하셔서 작성해주세요.</li>
-                  <li>신청하신 물품은 그 다음주, 2층 경영지원팀 - 총무님께 요청하셔서 픽업하시면 됩니다.</li>
-                  <li className="text-red-600 font-bold underline decoration-red-200 underline-offset-4">알파문구, 쿠팡 등 별도로 구매하신 비용은 앞으로 비용이 지원되지 않습니다. (개인결제로 진행)</li>
-                </ol>
+              <div className="p-8 space-y-8">
+                <div className="space-y-4">
+                  <h3 className="text-base font-bold text-slate-800 flex items-center gap-2">
+                    <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    물품 구매 신청 가이드
+                  </h3>
+                  <ul className="list-disc list-inside space-y-2 text-slate-700 leading-relaxed text-[13px] font-medium">
+                    <li>세금계산서 발행, (수리비, 기계 구매류 구입 등) 법인카드로 별도 결제해야 하는 건은 <span className="text-blue-600 font-bold">사전 기안을 작성</span>해주세요.</li>
+                    <li>이 외에, 팀별로 업무에 필요한 소품 및 수시로 개별 구매하시던 품목은 앞으로 <span className="text-blue-600 font-bold">'물품 신청서'</span>로 신청해주시면 됩니다.</li>
+                    <li>알파문구, 마트, 편의점, 쿠팡 등에서 따로 구매하셨던 아이템 (장갑, 비닐, 휴지, 커피, 문구류 등) 들이 해당됩니다.</li>
+                    <li>매월 첫째주, 팀에서 필요하신 물품을 취합하여 아래 링크에 작성해주세요.</li>
+                    <li>소모품 구매시에는 '물품 신청서'로 신청만 해주시면 되고 기안 작성은 별도로 하지 않으셔도 됩니다.</li>
+                    <li>이외에도 추가로 필요하신 물품은 수시로 아래 링크에 접속하셔서 작성해주세요.</li>
+                    <li>신청하신 물품은 그 다음주, 2층 경영지원팀 - 총무님께 요청하셔서 픽업하시면 됩니다.</li>
+                  </ul>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-blue-600 text-xl">📝</span>
+                      <h4 className="font-bold text-blue-900">기안 작성 O</h4>
+                    </div>
+                    <p className="text-[12px] text-blue-800 leading-relaxed">
+                      세금계산서 발행건, 법인카드 구매건 (외부 미팅, 기계류 구입, 수리비, 자재비 등 큰 비용이자 별도 보고가 필요한 내용은 사전 기안 작성)
+                    </p>
+                  </div>
+                  <div className="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-emerald-600 text-xl">🛒</span>
+                      <h4 className="font-bold text-emerald-900">기안 작성 X + 물품 신청서 작성</h4>
+                    </div>
+                    <p className="text-[12px] text-emerald-800 leading-relaxed">
+                      소모품/문구류 등 구매 (기존 쿠팡, 알파문고, 마트 구매물품)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-slate-100">
+                  <h3 className="text-base font-bold text-slate-800 flex items-center gap-2 mb-4">
+                    <span className="w-1.5 h-6 bg-blue-600 rounded-full"></span>
+                    시행 목적
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="space-y-1.5">
+                      <p className="text-[13px] font-bold text-slate-800">불필요한 업무 제거</p>
+                      <p className="text-[11px] text-slate-500 leading-tight">각 팀의 번거로운 부수적 업무(검색, 구매, 배송 관리 등)를 제거하여 주업무에 집중합니다.</p>
+                    </div>
+                    <div className="space-y-1.5">
+                      <p className="text-[13px] font-bold text-slate-800">시간 및 비용 절감</p>
+                      <p className="text-[11px] text-slate-500 leading-tight">공통 필요 물품을 한번에 대량 구매하여 기업의 운영 효율과 비용을 최적화합니다.</p>
+                    </div>
+                    <div className="space-y-1.5">
+                      <p className="text-[13px] font-bold text-slate-800">효율적 재고 시스템</p>
+                      <p className="text-[11px] text-slate-500 leading-tight">사용 내역 데이터를 바탕으로 필요한 물품을 미리 준비할 수 있는 예측 시스템을 마련합니다.</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <a href="https://docs.google.com/forms/d/1NIiJKnAxLBO_o4qhKqRiBltnQ-7zYCYcrHh0AujuweM/edit" target="_blank" rel="noopener noreferrer" className="group flex items-center bg-white rounded-3xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1">
                 <div className="w-1/3 h-full overflow-hidden">
@@ -119,7 +239,7 @@ const App: React.FC = () => {
                   <img src="https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=400" alt="Signpost" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="p-8 flex-1">
-                  <h3 className="text-xl font-bold text-[#00529b] mb-2 group-hover:underline underline-offset-4">문의사항</h3>
+                  <h3 className="text-xl font-bold text-[#00529b] mb-2 group-hover:underline underline-offset-4">기타 문의사항</h3>
                   <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Click to open form</p>
                 </div>
               </a>
