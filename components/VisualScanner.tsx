@@ -70,4 +70,34 @@ const VisualScanner: React.FC = () => {
                   >
                     사진 업로드 / 촬영
                   </button>
-                  <p className="text-[10px] text-gray-
+                </div>
+              </div>
+            )}
+          </div>
+          <input type="file" ref={fileInputRef} onChange={handleFileChange} accept="image/*" className="hidden" />
+          <button
+            onClick={startAnalysis}
+            disabled={!image || loading}
+            className="w-full py-4 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-800 text-white rounded-2xl font-black text-lg transition-all shadow-xl shadow-blue-900/20"
+          >
+            {loading ? '분석 중...' : '이미지 분석 시작'}
+          </button>
+        </div>
+
+        <div className="bg-gray-900 border border-gray-800 rounded-3xl p-8 shadow-inner min-h-[300px]">
+          <h3 className="text-blue-400 font-black text-xs uppercase tracking-widest mb-6 border-b border-gray-800 pb-4">Analysis Result</h3>
+          <div className="text-gray-300 leading-relaxed text-sm whitespace-pre-wrap">
+            {analysis || (loading ? 'AI가 이미지를 꼼꼼히 분석하고 있습니다...' : '왼쪽에서 사진을 선택하고 분석 버튼을 눌러주세요.')}
+          </div>
+        </div>
+      </div>
+      <div className="text-center">
+        <p className="text-[10px] text-gray-500 font-medium">
+          ※ 분석에 사용되는 이미지는 저장되지 않으며 보안 규정을 준수합니다.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default VisualScanner;
