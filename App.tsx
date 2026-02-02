@@ -442,10 +442,10 @@ const App: React.FC = () => {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-amber-50 rounded-full flex items-center justify-center text-amber-500 text-lg sm:text-xl flex-shrink-0">
                   ⚠️
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 text-left">
                   <h4 className="text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">중요 안내 사항</h4>
                   <p className="text-slate-800 text-xs sm:text-sm font-medium leading-relaxed">
-                    2026년 발생 연차에서 사용 연차를 차감한 잔여 연차를 확인하실 수 있습니다. 추가 문의사항은 경영지원팀으로 문의 부탁드립니다. 또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
+                    2026년 발생 연차에서 사용 연차를 차감한 잔여 연차를 확인하실 수 있습니다. 작년 이월 연차를 비롯한 추가 문의사항은 경영지원팀으로 문의 부탁드립니다. 또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
                   </p>
                 </div>
               </div>
