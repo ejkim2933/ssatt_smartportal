@@ -443,9 +443,11 @@ const App: React.FC = () => {
                   ⚠️
                 </div>
                 <div className="space-y-2 text-left">
-                  <h4 className="text-slate-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">중요 안내 사항</h4>
-                  <p className="text-slate-800 text-xs sm:text-sm font-medium leading-relaxed">
-                    2026년 발생 연차에서 사용 연차를 차감한 잔여 연차를 확인하실 수 있습니다. 작년 이월 연차를 비롯한 추가 문의사항은 경영지원팀으로 문의 부탁드립니다. 또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
+                  <p className="text-black text-xs sm:text-sm font-bold leading-relaxed whitespace-pre-line">
+                    <span className="text-red-600">[중요 안내 사항]</span>
+                    {"\n"}현재 확인되는 숫자는 2026년 발생 연차에서 2026년 내 사용하신 연차를 차감한 잔여 연차 일수입니다. 이월 연차는 반영되어있지 않습니다. 
+                    {"\n"}연차 일수에 대한 문의가 있으실 경우 경영지원팀으로 문의 부탁드립니다. 
+                    {"\n"}또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
                   </p>
                 </div>
               </div>
