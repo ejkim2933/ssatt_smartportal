@@ -444,10 +444,16 @@ const App: React.FC = () => {
                 </div>
                 <div className="space-y-2 text-left">
                   <p className="text-black text-xs sm:text-sm font-bold leading-relaxed whitespace-pre-line">
-                    <span className="text-red-600">[중요 안내 사항]</span>
-                    {"\n"}현재 확인되는 숫자는 2026년 발생 연차에서 2026년 내 사용하신 연차를 차감한 잔여 연차 일수입니다. 이월 연차는 반영되어있지 않습니다. 
-                    {"\n"}연차 일수에 대한 문의가 있으실 경우 경영지원팀으로 문의 부탁드립니다. 
-                    {"\n"}또한, 올해는 적극적으로 연차를 사용해주시기 부탁드립니다.
+                    <span className="text-red-600">[주의사항]</span>
+                    {"\n\n"}
+                    <span className="font-extrabold text-slate-900">1. 연차 발생 및 사용</span>
+                    {"\n"}1) 당사는 근로기준법에 따라 입사일 기준으로 연차를 부여하며 사내 시스템(스마트포털-연차관리)을 통해 수시로 잔여 연차 일수 정보를 제공하고 있습니다.
+                    {"\n"}2) 잔여 연차 일수를 관리하고 휴가 계획을 세우는 것은 근로자의 기본 의무 입니다. 연차 사용 전 잔여 연차를 필히 확인해 주시기 바랍니다.
+                    {"\n"}3) 연차 사용은 근로자의 휴식권을 보장하기 위함이니 기한 내에 계획적으로 사용해주시고 근로기준법에 따라 연차촉진을 시행할 수 있습니다.
+                    {"\n\n"}
+                    <span className="font-extrabold text-slate-900">2. 연차 소진시 근태 처리</span>
+                    {"\n"}1) 부여된 연차를 모두 소진한 후 추가적인 휴식이 필요한 경우에도 사전에 승인을 받아야 하며 해당 일수는 <span className="text-red-600 font-extrabold">'무급휴무'</span> 처리됨을 알려 드립니다.
+                    {"\n"}2) 근로기준법에 따라 연차 없이 결근할 경우, 해당 주의 <span className="text-red-600 font-extrabold">'주휴수당'은 발생하지 않습니다</span>. 연차 사용 계획 시 이 점을 반드시 유념하시어 급여상의 불이익이 없도록 주의해 주시기 바랍니다.
                   </p>
                 </div>
               </div>
