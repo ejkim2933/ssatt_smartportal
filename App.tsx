@@ -54,7 +54,7 @@ const App: React.FC = () => {
 
       const found = data.find(row => 
         row['이름'] === searchName && 
-        (row['생년월일'] === searchBirth || row['비밀번호'] === searchBirth || !row['생년월일'])
+        row['비밀번호'] === searchBirth
       );
 
       if (found) {
